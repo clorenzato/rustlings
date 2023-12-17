@@ -24,7 +24,14 @@ fn temp_file() -> String {
 
     format!("./temp_{}_{thread_id}", process::id())
 }
-
+pub fn capitalize_first(input: &str) -> String {
+    let mut c = input.chars();
+    match c.next() {
+        None => String::new(),
+        Some(first) => {
+            first.to_uppercase().to_string(),
+    }
+}
 // The mode of the exercise.
 #[derive(Deserialize, Copy, Clone, Debug)]
 #[serde(rename_all = "lowercase")]
